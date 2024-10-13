@@ -1,0 +1,14 @@
+{
+  "framework": "remix",
+  "images": {
+    "contentDispositionType": "inline",
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "dangerouslyAllowSVG": false,
+    "formats": ["image/avif", "image/webp"],
+    "minimumCacheTTL": 60,
+    "sizes": [
+      64, 128, 270, 347, 351, 375, 382, 431, 540, 606, 610, 694, 702, 708, 732,
+      750, 764, 772, 862, 1038, 1212, 1220, 1416, 1464, 1544, 2076
+    ]
+  }
+}
