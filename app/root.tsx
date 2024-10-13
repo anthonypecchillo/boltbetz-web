@@ -125,7 +125,7 @@ export function ErrorBoundary() {
             <p className="mb-6 mt-4 text-gray-600">
               We can&apos;t find that page.
             </p>
-            <AnchorButton href={route("/my/profile")}>Return Home</AnchorButton>
+            <AnchorButton href={route("/wallet")}>Return Home</AnchorButton>
           </>
         ),
       }}

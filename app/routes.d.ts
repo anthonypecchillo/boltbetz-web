@@ -4,7 +4,7 @@ declare module "routes-gen" {
     "/api/auth/callback": Record<string, never>;
     "/api/auth/login": Record<string, never>;
     "/api/auth/logout": Record<string, never>;
-    "/my/profile": Record<string, never>;
+    "/wallet": Record<string, never>;
   };
 
   export function route<
@@ -13,6 +13,6 @@ declare module "routes-gen" {
       | ["/api/auth/callback"]
       | ["/api/auth/login"]
       | ["/api/auth/logout"]
-      | ["/my/profile"]
+      | ["/wallet"]
   >(...args: T): typeof args[0];
 }
