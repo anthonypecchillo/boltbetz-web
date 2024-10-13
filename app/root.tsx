@@ -137,15 +137,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" className="font-manrope">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Welcome to Boltbetz!" />
+
         <meta property="og:title" content="Boltbetz" />
         <meta property="og:description" content="Welcome to Boltbetz!" />
         <meta
           property="og:image"
           content="https://boltbetz-web.vercel.app/og-logo.jpg"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://boltbetz-web.vercel.app/" />
+        <meta property="og:type" content="website" />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Boltbetz" />
         <meta name="twitter:description" content="Welcome to Boltbetz!" />
@@ -153,6 +158,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
           name="twitter:image"
           content="https://boltbetz-web.vercel.app/og-logo.jpg"
         />
+
+        <title>Boltbetz</title>
+        <link rel="canonical" href="https://boltbetz-web.vercel.app/" />
+
         <Meta />
         <Links />
       </head>
