@@ -35,6 +35,33 @@ import { getEnv } from "~/utils/env.server";
 import { getFlash } from "~/utils/flash";
 import { AnchorButton } from "./components/button";
 
+export function meta() {
+  return [
+    { title: "Boltbetz" },
+    { name: "description", content: "Welcome to Boltbetz!" },
+    { property: "og:title", content: "Boltbetz" },
+    { property: "og:description", content: "Welcome to Boltbetz!" },
+    {
+      property: "og:image",
+      content:
+        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/og-logo.jpg",
+    },
+    {
+      property: "og:url",
+      content:
+        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/",
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Boltbetz" },
+    { name: "twitter:description", content: "Welcome to Boltbetz!" },
+    {
+      name: "twitter:image",
+      content:
+        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/og-logo.jpg",
+    },
+  ];
+}
+
 export function links(): LinkDescriptor[] {
   return [
     {
