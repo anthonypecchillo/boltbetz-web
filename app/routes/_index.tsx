@@ -2,7 +2,6 @@ import { useNavigate, useRouteLoaderData } from "@remix-run/react";
 import type { MetaDescriptor } from "@vercel/remix";
 import { useEffect } from "react";
 import background from "~/assets/login-background.svg";
-import { AuthButton } from "~/components/auth-button";
 import { Logo } from "~/components/logo";
 import type { loader as rootLoader } from "~/root";
 
@@ -40,7 +39,7 @@ export default function Index() {
           <div className="flex w-full max-w-xl justify-center">
             <Logo />
           </div>
-          <AuthButton />
+          {/* <AuthButton /> */}
           <span className="mt-6 text-2xl text-white">
             ⚡️ December 2024 ⚡️
           </span>

@@ -1,4 +1,9 @@
+import type { MetaDescriptor } from "@remix-run/node";
 import background from "~/assets/login-background.svg";
+
+export function meta() {
+  return [{ title: "Wallet" }] satisfies MetaDescriptor[];
+}
 
 export default function Route() {
   return (
