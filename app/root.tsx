@@ -8,17 +8,14 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
-  useRouteLoaderData,
 } from "@remix-run/react";
 import { withSentry } from "@sentry/remix";
-import { Analytics } from "@vercel/analytics/react";
 import type {
   HeadersFunction,
   LinkDescriptor,
   LoaderFunctionArgs,
 } from "@vercel/remix";
 import { json } from "@vercel/remix";
-import { SpeedInsights } from "@vercel/speed-insights/remix";
 import { AuthenticityTokenProvider } from "remix-utils/csrf/react";
 import { route } from "routes-gen";
 import faviconUrl from "~/assets/bolt.svg?url";
@@ -34,33 +31,6 @@ import { csrf } from "~/utils/csrf.server";
 import { getEnv } from "~/utils/env.server";
 import { getFlash } from "~/utils/flash";
 import { AnchorButton } from "./components/button";
-
-export function meta() {
-  return [
-    { title: "Boltbetz" },
-    { name: "description", content: "Welcome to Boltbetz!" },
-    { property: "og:title", content: "Boltbetz" },
-    { property: "og:description", content: "Welcome to Boltbetz!" },
-    {
-      property: "og:image",
-      content:
-        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/og-logo.jpg",
-    },
-    {
-      property: "og:url",
-      content:
-        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/",
-    },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Boltbetz" },
-    { name: "twitter:description", content: "Welcome to Boltbetz!" },
-    {
-      name: "twitter:image",
-      content:
-        "https://boltbetz-evugdy7sp-anthonypecchillos-projects.vercel.app/og-logo.jpg",
-    },
-  ];
-}
 
 export function links(): LinkDescriptor[] {
   return [
@@ -161,7 +131,6 @@ export function ErrorBoundary() {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const loaderData = useRouteLoaderData<typeof loader>("root");
   const nonce = useNonce();
 
   return (
@@ -169,6 +138,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="Welcome to Boltbetz!" />
+        <meta property="og:title" content="Boltbetz" />
+        <meta property="og:description" content="Welcome to Boltbetz!" />
+        <meta
+          property="og:image"
+          content="https://boltbetz-web.vercel.app/og-logo.jpg"
+        />
+        <meta property="og:url" content="https://boltbetz-web.vercel.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Boltbetz" />
+        <meta name="twitter:description" content="Welcome to Boltbetz!" />
+        <meta
+          name="twitter:image"
+          content="https://boltbetz-web.vercel.app/og-logo.jpg"
+        />
         <Meta />
         <Links />
       </head>
@@ -176,12 +160,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-        {loaderData?.ENV.VERCEL ? (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        ) : undefined}
       </body>
     </html>
   );
