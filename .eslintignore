@@ -1,0 +1,21 @@
+# .gitignore
+.DS_Store
+/.env
+/.env.example
+/.env.sentry-build-plugin
+/.eslintcache
+/.prettiercache
+/.sentryclirc
+/.vercel/
+/blob-report/
+/build/
+/coverage/
+/node_modules/
+/playwright-report/
+/playwright/.auth/
+/playwright/.cache/
+/public/build/
+/test-results/
+
+# .eslintignore
+app/routes.d.ts
