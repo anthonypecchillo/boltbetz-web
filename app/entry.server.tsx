@@ -83,6 +83,7 @@ const VERCEL_PREVIEW_CSP = {
     "wss://ws-us3.pusher.com",
     "https://sockjs-us3.pusher.com",
     "https://*.amazonaws.com",
+    "https://o4508110816411648.ingest.sentry.io",
   ],
   "font-src": ["https://vercel.live"],
   "frame-src": ["https://vercel.live"],
@@ -96,7 +97,7 @@ const SENTRY_CSP = {
     "https://o4508110816411648.ingest.us.sentry.io",
   ],
   "report-uri": [
-    `https://o4508110816411648.ingest.us.sentry.io/api/4507748707794944/security/?sentry_key=9589274f6ea5bb78822f8edcef4be880&sentry_environment=${process.env.VERCEL_ENV}`,
+    `https://o4508110816411648.ingest.us.sentry.io/api/4508110846296064/security/?sentry_key=1a78c50043146f9f1727d2e93fafcddb&sentry_environment=${process.env.VERCEL_ENV}`,
   ],
   "child-src": ["blob:"],
   "worker-src": ["blob:"],
