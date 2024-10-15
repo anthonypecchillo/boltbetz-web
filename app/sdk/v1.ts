@@ -1,5 +1,3 @@
-import type * as V1 from "~/entities/v1";
-
 type TypedResponse<T = unknown> = Omit<Response, "json"> & {
   json(): Promise<T>;
 };
@@ -67,14 +65,11 @@ export function mergeHeaders(
   return mergedHeaders;
 }
 
-export function getUser({
-  headers,
-}: {
-  headers?: HeadersInit;
-}): Promise<
-  TypedResponse<V1.Message<"getUser", { jwt: string; user: V1.User }>>
+export function getUser({ headers }: { headers?: HeadersInit }): Promise<
+  // TypedResponse<V1.Message<"getUser", { jwt: string; user: V1.User }>>
+  TypedResponse<{ sub: string; name: string; email: string; picture: string }>
 > {
-  return fetch(new URL("/v1/special/users", process.env.API_BASE_URL), {
+  return fetch(new URL("/userinfo", process.env.AUTH0_ISSUER_BASE_URL), {
     method: "GET",
     headers: mergeHeaders(headers, DEFAULT_HEADERS),
   });

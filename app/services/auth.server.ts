@@ -27,38 +27,36 @@ export const authenticator = new Authenticator<SessionData["user"]>(
       clientID: process.env.AUTH0_CLIENT_ID,
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
       domain: new URL(process.env.AUTH0_ISSUER_BASE_URL).hostname,
+      scope: "openid profile email api-access",
+      // audience: "https://bbdev1.490s.com:8000/api/",
     },
-    async ({ extraParams }) => {
-      if (!extraParams.id_token) {
-        console.error("Auth0Strategy - Missing id_token");
+    async ({ accessToken /*, extraParams*/ }) => {
+      // if (!extraParams.id_token) {
+      //   console.error("Auth0 Strat: Missing id_token");
+      //   throw new Error("Failed to authenticate with Auth0");
+      // }
+
+      if (!accessToken) {
+        console.error("Auth0 Strat: Missing access_token");
         throw new Error("Failed to authenticate with Auth0");
       }
 
       const response = await getUser({
         headers: {
-          Authorization: `Bearer ${extraParams.id_token}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
 
       if (!response.ok) {
-        console.error(
-          "Auth0Strategy - Failed to authenticate with Boltbetz API",
-        );
+        console.error("Auth0 Strat: Failed to authenticate with Boltbetz API");
         throw new Error("Failed to authenticate with Boltbetz API");
       }
 
-      const data = await response.json();
-
-      if (!data.payload.jwt) {
-        console.error("Auth0Strategy - Missing JWT in Boltbetz API response");
-        throw new Error(
-          "Failed to authenticate. Boltbetz API did not return a JWT",
-        );
-      }
+      const user = await response.json();
 
       return {
-        boltbetzUser: data.payload.user,
-        boltbetzJWT: data.payload.jwt,
+        boltbetzUser: user,
+        boltbetzJWT: accessToken,
       };
     },
   ),
