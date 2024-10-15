@@ -13,6 +13,7 @@ const config: StorybookConfig = {
     "@storybook/addon-themes",
     "@storybook/addon-a11y",
     "@storybook/addon-coverage",
+    "@storybook/addon-controls",
   ],
   build: {
     test: {
