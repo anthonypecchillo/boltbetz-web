@@ -19,6 +19,7 @@ import { json } from "@vercel/remix";
 import { AuthenticityTokenProvider } from "remix-utils/csrf/react";
 import { route } from "routes-gen";
 import faviconUrl from "~/assets/bolt.svg?url";
+import background from "~/assets/login-background.svg";
 import {
   DefaultGenericStatusHandler,
   GeneralErrorBoundary,
@@ -165,7 +166,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        className="flex min-h-screen flex-col items-center justify-center bg-gray-50 bg-contain bg-center bg-no-repeat lg:bg-cover"
+        style={{
+          // fontFamily: "system-ui, sans-serif",
+          lineHeight: "1.8",
+          backgroundImage: `url(${background})`,
+        }}
+      >
         {children}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
