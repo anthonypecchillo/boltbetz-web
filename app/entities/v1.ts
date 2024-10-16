@@ -26,10 +26,16 @@ export type ValidationErrorMessage = Message<
   { validationError: ValidationError }
 >;
 
+// export type User = {
+//   id: string;
+//   name: string;
+//   email: string;
+//   image_url: string | null;
+// };
+
 export type User = {
-  id: string;
-  first_name: string;
-  last_name: string;
+  sub: string;
+  name: string;
   email: string;
-  image_url: string | null;
+  picture: string;
 };
