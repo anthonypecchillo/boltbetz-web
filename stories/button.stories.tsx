@@ -4,8 +4,10 @@ import { Icon } from "~/components/icon";
 
 const meta = {
   args: {
+    children: "Boltbetz",
     disabled: false,
-    children: "Button",
+    fullWidth: false,
+    space: "lg",
   },
   component: Button,
 } satisfies Meta<typeof Button>;
@@ -14,23 +16,17 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary = {} satisfies Story;
+export const PrimaryLarge = {} satisfies Story;
+
+export const PrimaryMedium = {
+  args: {
+    space: "md",
+  },
+} satisfies Story;
 
 export const Secondary = {
   args: {
     intent: "secondary",
-  },
-} satisfies Story;
-
-export const Destructive = {
-  args: {
-    intent: "destructive",
-  },
-} satisfies Story;
-
-export const Constructive = {
-  args: {
-    intent: "constructive",
   },
 } satisfies Story;
 
@@ -40,21 +36,46 @@ export const Tertiary = {
   },
 } satisfies Story;
 
+export const Accent = {
+  args: {
+    intent: "accent",
+  },
+} satisfies Story;
+
+export const Destructive = {
+  args: {
+    intent: "destructive",
+  },
+} satisfies Story;
+
 export const IconLeft = {
   args: {
-    iconLeft: <Icon name="bell" />,
+    iconLeft: <Icon name="bolt" />,
   },
 } satisfies Story;
 
 export const IconRight = {
   args: {
-    iconRight: <Icon name="bell" />,
+    iconRight: <Icon name="bolt" />,
   },
 } satisfies Story;
 
 export const DualIcon = {
   args: {
-    iconLeft: <Icon name="bell" />,
-    iconRight: <Icon name="bell" />,
+    iconLeft: <Icon name="bolt" />,
+    iconRight: <Icon name="bolt" />,
+  },
+} satisfies Story;
+
+export const FullWidth = {
+  args: {
+    fullWidth: true,
+  },
+} satisfies Story;
+
+export const FullWidthIconLeft = {
+  args: {
+    iconLeft: <Icon name="bolt" />,
+    fullWidth: true,
   },
 } satisfies Story;
