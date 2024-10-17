@@ -14,6 +14,9 @@ export default {
         0.5: "0.5px",
         9.5: "9.5px",
       },
+      boxShadow: {
+        custom: "0px 4px 29px 0px rgba(0, 0, 0, 0.07)", // Converted #00000012 to rgba(0, 0, 0, 0.07)
+      },
       divideWidth: {
         0.5: "0.5px",
       },
@@ -65,17 +68,17 @@ export default {
           "950": "#1a2b51",
         },
         green: {
-          "50": "#f2fde8",
-          "100": "#e1facd",
-          "200": "#c5f5a1",
-          "300": "#9feb6b",
-          "400": "#73db2f",
-          "500": "#5dc31f",
-          "600": "#459c14",
-          "700": "#367714",
-          "800": "#2f5e16",
-          "900": "#295017",
-          "950": "#122c07",
+          "50": "#eefff5",
+          "100": "#d8ffea",
+          "200": "#b4fed6",
+          "300": "#7afbb6",
+          "400": "#39ef8e",
+          "500": "#0fd86e",
+          "600": "#05a651",
+          "700": "#088d48",
+          "800": "#0d6e3c",
+          "900": "#0d5a33",
+          "950": "#00331a",
         },
         red: {
           "50": "#fef2f3",
@@ -105,30 +108,17 @@ export default {
         },
         // TODO: Migrate from gray to grayNew
         gray: {
-          "50": "#f9f9f9",
-          "100": "#f9fafb",
-          "200": "#f0f0f0",
-          "300": "#e1e1e1",
-          "400": "#c2c2c2",
-          "500": "#bebebe",
-          "600": "#909090",
-          "700": "#7c7c7c",
-          "800": "#424242",
-          "900": "#161616",
-          "950": "#121212",
-        },
-        grayNew: {
-          "50": "#fafafa",
-          "100": "#efefef",
-          "200": "#dcdcdc",
-          "300": "#bdbdbd",
-          "400": "#989898",
-          "500": "#7c7c7c",
-          "600": "#656565",
-          "700": "#525252",
-          "800": "#464646",
-          "900": "#3d3d3d",
-          "950": "#292929",
+          "50": "#ffffff",
+          "100": "#fafafa",
+          "200": "#f2f2f2",
+          "300": "#c9cbcb",
+          "400": "#a5abab",
+          "500": "#8b9292",
+          "600": "#5c6667",
+          "700": "#313e3f",
+          "800": "#182628",
+          "900": "#071619",
+          "950": "#000000",
         },
       },
       outlineWidth: {
@@ -167,6 +157,20 @@ export default {
       "7xl": ["4.5rem", { lineHeight: "1" }],
       "8xl": ["6rem", { lineHeight: "1" }],
       "9xl": ["8rem", { lineHeight: "1" }],
+
+      title1: ["2.75rem", { lineHeight: "3.25rem", fontWeight: "800" }], // 44pt
+      title2: ["2rem", { lineHeight: "2.5rem", fontWeight: "800" }], // 32pt
+      title3: ["1.375rem", { lineHeight: "1.625rem", fontWeight: "800" }], // 22pt
+      subtitle1: ["1.125rem", { lineHeight: "1.5rem", fontWeight: "800" }], // 18pt
+      subtitle2: ["1rem", { lineHeight: "1.375rem", fontWeight: "800" }], // 16pt
+      body1: ["0.875rem", { lineHeight: "1.25rem", fontWeight: "800" }], // 14pt ExtraBold
+      body2: ["0.875rem", { lineHeight: "1rem", fontWeight: "700" }], // 14pt Bold
+      body3: ["0.875rem", { lineHeight: "1.25rem", fontWeight: "500" }], // 14pt Medium
+      caption1: ["0.75rem", { lineHeight: "1rem", fontWeight: "700" }], // 12pt Bold
+      caption2: ["0.75rem", { lineHeight: "1rem", fontWeight: "500" }], // 12pt Medium
+      caption3: ["0.75rem", { lineHeight: "1rem", fontWeight: "700" }], // 12pt Bold with underline
+      caption4: ["0.75rem", { lineHeight: "1rem", fontWeight: "400" }], // 12pt Regular
+      caption5: ["0.625rem", { lineHeight: "0.75rem", fontWeight: "700" }], // 10pt Bold
     },
   },
   plugins: [
